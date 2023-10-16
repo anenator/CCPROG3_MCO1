@@ -14,9 +14,11 @@ public class BattlePhase {
         this.numActions = 3;
     }
 
+
     public void initiateBattle() {
         Scanner scanner = new Scanner(System.in);
-
+      //  System.out.println(userInventory.getCapturedCreatureList().get(0).getCreatureName());
+        System.out.println();
         while (numActions > 0 && enemyCreature.getCurrentHealth() > 0) {
             System.out.println("Battle Options:");
             System.out.println("1: ATTACK");
@@ -74,17 +76,23 @@ public class BattlePhase {
 
     private void swapActiveCreature() {
         // Logic for swapping the active creature
-        Inventory userInventory = new Inventory();
         userInventory.showChangeActiveCreature();
         Scanner scanner = new Scanner(System.in);
         String newActiveCreatureName = scanner.nextLine();
+    
+        // Validate if the selected creature exists in the inventory
         Creature newActiveCreature = userInventory.selectCreature(newActiveCreatureName);
-        if (newActiveCreature != null) {
-            userInventory.swapActiveCreature(newActiveCreature);
-        } else {
-            System.out.println("No active creatures available. You must return to the area.");
+        while (newActiveCreature == null) {
+            System.out.println("Invalid creature name. Please select a valid creature.");
+            userInventory.showChangeActiveCreature();
+            newActiveCreatureName = scanner.nextLine();
+            newActiveCreature = userInventory.selectCreature(newActiveCreatureName);
         }
+    
+        userInventory.swapActiveCreature(newActiveCreature);
+        activeCreature = newActiveCreature;
     }
+    
 
     private void attemptCatch() {
         Random rand = new Random();
@@ -104,30 +112,8 @@ public class BattlePhase {
         } else {
             System.out.println("You were unable to defeat the enemy creature.");
         }
-
-        // Check if the active creature has fainted (health <= 0)
-        if (activeCreature.getCurrentHealth() <= 0) {
-            System.out.println("Your active creature has fainted!");
-
-            // Logic to select a new active creature if available
-            
-            userInventory.showChangeActiveCreature();
-            Scanner scanner = new Scanner(System.in);
-            userInventory.showCapturedList();
-            String newActiveCreatureName = scanner.nextLine();
-            Creature newActiveCreature = userInventory.selectCreature(newActiveCreatureName);
-
-            if (newActiveCreature != null) {
-                // Set the new active creature
-                userInventory.swapActiveCreature(newActiveCreature);
-            } else {
-                System.out.println("No active creatures available. You must return to the area.");
-            }
-        }
-
-        // Return to the area screen or perform other actions here
-
-        // Reset the number of actions for the next battle
+        System.out.println();
+        System.out.println("Returning to the area.");
         numActions = 3;
     }
 }

@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class Inventory {
-    private 
     private ArrayList<Creature> capturedCreatureList;
     private Creature activeCreature; // Update the attribute
     private int maxCapacity;
@@ -52,10 +51,11 @@ public class Inventory {
             if (creature.getCreatureName().equals(creatureName)) {
                 System.out.println("Creature " + creatureName + " has been selected.");
                 changeActiveCreature(creature);
-                return Creature;
+                return creature;
             }
         }
         System.out.println("Creature " + creatureName + " not found in the inventory.");
+        return null;
     }
 
     public void showCapturedCreatureDetails() {
@@ -83,6 +83,9 @@ public class Inventory {
         System.out.println("Active creature has been changed to: " + activeCreature.getCreatureName());
     }
 
+    public Creature getActiveCreature() {
+        return activeCreature;
+    }
     
 }
   
