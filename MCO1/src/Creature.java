@@ -1,5 +1,3 @@
-import java.net.*;
-import java.io.*;
 
 public class Creature {
     private String creatureName;
@@ -14,56 +12,11 @@ public class Creature {
         this.creatureType = creatureType;
         this.creatureFamily = creatureFamily;
         this.creatureEvolutionLevel = creatureEvolutionLevel;
-        this.currentHealth = 100;
+        this.currentHealth = 50;
         numCreatures++;
         
-        if (this.creatureName.equals("Strawander")) {
-            this.creatureType = "Fire";
-            this.creatureFamily = "A";
-            this.creatureEvolutionLevel = 1;
-            numCreatures += 1;
-        } else if (this.creatureName.equals("Chocowool")) {
-            this.creatureType = "Fire";
-            this.creatureFamily = "B";
-            this.creatureEvolutionLevel = 1;
-            numCreatures += 1;
-        } else if (this.creatureName.equals("Parfwit")) {
-            this.creatureType = "Fire";
-            this.creatureFamily = "C";
-            this.creatureEvolutionLevel = 1;
-            numCreatures += 1;
-        } else if (this.creatureName.equals("Brownisaur")) {
-            this.creatureType = "Earth";
-            this.creatureFamily = "D";
-            this.creatureEvolutionLevel = 1;
-            numCreatures += 1;
-        } else if (this.creatureName.equals("Frubat")) {
-            this.creatureType = "Earth";
-            this.creatureFamily = "E";
-            this.creatureEvolutionLevel = 1;
-            numCreatures += 1;
-        } else if (this.creatureName.equals("Malts")) {
-            this.creatureType = "Earth";
-            this.creatureFamily = "F";
-            this.creatureEvolutionLevel = 1;
-            numCreatures += 1;
-        } else if (this.creatureName.equals("Squirpie")) {
-            this.creatureType = "Water";
-            this.creatureFamily = "G";
-            this.creatureEvolutionLevel = 1;
-            numCreatures += 1;
-        } else if (this.creatureName.equals("Chocolite")) {
-            this.creatureType = "Water";
-            this.creatureFamily = "H";
-            this.creatureEvolutionLevel = 1;
-            numCreatures += 1;
-        } else if (this.creatureName.equals("Oshacone")) {
-            this.creatureType = "Water";
-            this.creatureFamily = "I";
-            this.creatureEvolutionLevel = 1;
-            numCreatures += 1;
-        }
     }
+
 
     public String getCreatureName() {
         return this.creatureName;
