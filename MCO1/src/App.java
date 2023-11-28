@@ -12,6 +12,8 @@ public class App {
         boolean isValidOption = false;
         userInventory = new Inventory();
         Area area1 = new Area(1, 5);
+        Area area2 = new Area(3, 3);
+        Area area3 = new Area(4, 4);
 
         instantiateCreatures();
        
@@ -151,6 +153,8 @@ public class App {
                     System.out.println();
                     System.out.println("Areas");
                     System.out.println("1: Area 1");
+                    System.out.println("2: Area 2");
+                    System.out.println("3: Area 3");
                     int option3 = scanner.nextInt();
                     switch (option3) {
                         case 1:
@@ -202,12 +206,111 @@ public class App {
                                     break;
                             } while (true);
                             break;
+                        case 2:
+                            do {
+                            System.out.println();
+                            System.out.println("Area 2");
+                            area2.showArea();
+                            System.out.println("1: Up");
+                            System.out.println("2: Down");
+                            System.out.println("3: Left");
+                            System.out.println("4: Right");
+                            System.out.println("5: Exit");
+                            int option4 = scanner.nextInt();
+                            switch (option4) {
+                                case 1:
+                                    System.out.println();
+                                    System.out.println("Up");
+                                    area1.moveUser(1, userInventory);
+                                    area1.showArea();
+                                    break;
+                                case 2:
+                                    System.out.println();
+                                    System.out.println("Down");
+                                    area1.moveUser(2, userInventory);
+                                    area1.showArea();
+                                    break;
+                                case 3:
+                                    System.out.println();
+                                    System.out.println("Left");
+                                    area1.moveUser(3, userInventory);
+                                    area1.showArea();
+                                    break;
+                                case 4:
+                                    System.out.println();
+                                    System.out.println("Right");
+                                    area1.moveUser(4, userInventory);
+                                    area1.showArea();
+                                    break;
+                                case 5:
+                                    System.out.println();
+                                    System.out.println("Exit");
+                                    break;
+                                default:
+                                    System.out.println();
+                                    System.out.println("Invalid Option. Please try again.");
+                                    break;
+                            }
+                                if (option4 == 5)
+                                    break;
+                            } while (true);
+                            break;
+                        case 3:
+                            do {
+                            System.out.println();
+                            System.out.println("Area 3");
+                            area3.showArea();
+                            System.out.println("1: Up");
+                            System.out.println("2: Down");
+                            System.out.println("3: Left");
+                            System.out.println("4: Right");
+                            System.out.println("5: Exit");
+                            int option4 = scanner.nextInt();
+                            switch (option4) {
+                                case 1:
+                                    System.out.println();
+                                    System.out.println("Up");
+                                    area1.moveUser(1, userInventory);
+                                    area1.showArea();
+                                    break;
+                                case 2:
+                                    System.out.println();
+                                    System.out.println("Down");
+                                    area1.moveUser(2, userInventory);
+                                    area1.showArea();
+                                    break;
+                                case 3:
+                                    System.out.println();
+                                    System.out.println("Left");
+                                    area1.moveUser(3, userInventory);
+                                    area1.showArea();
+                                    break;
+                                case 4:
+                                    System.out.println();
+                                    System.out.println("Right");
+                                    area1.moveUser(4, userInventory);
+                                    area1.showArea();
+                                    break;
+                                case 5:
+                                    System.out.println();
+                                    System.out.println("Exit");
+                                    break;
+                                default:
+                                    System.out.println();
+                                    System.out.println("Invalid Option. Please try again.");
+                                    break;
+                            }
+                                if (option4 == 5)
+                                    break;
+                            } while (true);
+                            break;
                         default:
                             System.out.println();
                             System.out.println("Invalid Option. Please try again.");
-                            break;
+                        break;
                     }
                     break;
+                    
                 case 3:
                     System.out.println();
                     System.out.println("Evolution");
@@ -230,15 +333,32 @@ public class App {
     public static void instantiateCreatures() {
         creatureList = new ArrayList<Creature>();
         creatureList.add(new Creature("Strawander", "Fire", "A", 1));
-        creatureList.add(new Creature("Chocowool", "Water", "A", 1));   
-        creatureList.add(new Creature("Parfwit", "Grass", "A", 1));
-        creatureList.add(new Creature("Brownisaur", "Fire", "B", 2));
-        creatureList.add(new Creature("Frubat", "Water", "B", 2));
-        creatureList.add(new Creature("Malts", "Grass", "B", 2));
-        creatureList.add(new Creature("Squirpie", "Fire", "C", 3));
-        creatureList.add(new Creature("Chocolite", "Water", "C", 3));
-        creatureList.add(new Creature("Oshacone", "Grass", "C", 3));
-        
+        creatureList.add(new Creature("Chocowool", "Fire", "B", 1));   
+        creatureList.add(new Creature("Parfwit", "Fire", "C", 1));
+        creatureList.add(new Creature("Brownisaur", "Grass", "D", 1));
+        creatureList.add(new Creature("Frubat", "Grass", "E", 1));
+        creatureList.add(new Creature("Malts", "Grass", "F", 1));
+        creatureList.add(new Creature("Squirpie", "Water", "G", 1));
+        creatureList.add(new Creature("Chocolite", "Water", "H", 1));
+        creatureList.add(new Creature("Oshacone", "Water", "I", 1));
+        creatureList.add(new Creature("Strawleon", "Fire", "A", 2));
+        creatureList.add(new Creature("Chocofluff", "Fire", "B", 2));   
+        creatureList.add(new Creature("Parfure", "Fire", "C", 2));
+        creatureList.add(new Creature("Chocosaur", "Grass", "D", 2));
+        creatureList.add(new Creature("Golberry", "Grass", "E", 2));
+        creatureList.add(new Creature("Kirlicake", "Grass", "F", 2));
+        creatureList.add(new Creature("Tartortle", "Water", "G", 2));
+        creatureList.add(new Creature("Chocolish", "Water", "H", 2));
+        creatureList.add(new Creature("Dewice", "Water", "I", 2));
+        creatureList.add(new Creature("Strawizard", "Fire", "A", 3));
+        creatureList.add(new Creature("Candaros", "Fire", "B", 3));   
+        creatureList.add(new Creature("Parfelure", "Fire", "C", 3));
+        creatureList.add(new Creature("Fudgasaur", "Grass", "D", 3));
+        creatureList.add(new Creature("Croberry", "Grass", "E", 3));
+        creatureList.add(new Creature("Velvevoir", "Grass", "F", 3));
+        creatureList.add(new Creature("Piestoise", "Water", "G", 3));
+        creatureList.add(new Creature("Icesundae", "Water", "H", 3));
+        creatureList.add(new Creature("Samurcone", "Water", "I", 3));
         
     }
 }
