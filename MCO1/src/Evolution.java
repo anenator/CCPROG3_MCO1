@@ -48,6 +48,28 @@ public class Evolution {
             case "Oshacone":
                 return 1; 
  
+            case "Strawleon":
+            case "Chocofluff":
+            case "Parfure":
+            case "Chocosaur":
+            case "Golberry":
+            case "Kirlicake":
+            case "Tartortle":
+            case "Chocolish":
+            case "Dewice":
+                return 2; 
+    
+            case "Strawizard":
+            case "Candaros":
+            case "Parfelure":
+            case "Fudgasaur":
+            case "Croberry":
+            case "Velvevoir":
+            case "Piestoise":
+            case "Icesundae":
+            case "Samurcone":
+                return 3; 
+     
             default:
                 return 1; 
         }
